@@ -5,6 +5,10 @@ and compiles them into a single file in [AsciiDoc](https://asciidoc.org/) format
 
 ## Installation
 
+```bash
+pip install git+https://github.com/CFabien00/PyAdoc.git
+```
+
 ### Localy (dev)
 
 Clone and install using `pip` :
@@ -12,7 +16,8 @@ Clone and install using `pip` :
 ```shell
 git clone https://github.com/tonutilisateur/pyadoc.git
 cd pyadoc
-pip install -e .
+python -m build
+pip install dist/pyadoc-0.1.0-py3-none-any.whl
 ```
 
 ## Usage
@@ -62,20 +67,17 @@ pyadoc/
 │   ├── __init__.py
 │   ├── main.py
 │   └── core.py
-├── setup.py
+├── pyproject.toml
 └── README.md
 ```
 
 ## Development
 
-The CLI entry point is defined in `setup.py` using `entry_points` :
+The CLI entry point is defined in `pyproject.toml` using `[project.scripts]` :
 
-```python
-entry_points = {
-    'console_scripts': [
-        'pyadoc = pyadoc.main:main',
-    ],
-}
+```toml
+[project.scripts]
+pyadoc = "pyadoc.main:main"
 ```
 
 This allows **_pyadoc_** to be used as a system command after installation with `pip`.
