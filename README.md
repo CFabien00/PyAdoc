@@ -14,10 +14,9 @@ pip install git+https://github.com/CFabien00/PyAdoc.git
 Clone and install using `pip` :
 
 ```shell
-git clone https://github.com/tonutilisateur/pyadoc.git
-cd pyadoc
-python -m build
-pip install dist/pyadoc-0.1.0-py3-none-any.whl
+git clone https://github.com/CFabien00/PyAdoc.git
+cd PyAdoc
+pip install .
 ```
 
 ## Usage
@@ -34,6 +33,12 @@ pyadoc ~/workspace/my_project_python ~/workspace/docs
 
 This will create a documentation.adoc file in the destination directory,
 containing all the docstrings extracted from the .py files in the source directory.
+
+- Extraction of docstrings for all classes and functions in `.py` files in a given directory.
+- Compilation of extracted docstrings into a single file in `.adoc` format.
+- Automatic generation of documentation to facilitate maintenance and understanding of the code.
+
+Ajout d'une section "Exemples"
 
 ### Result example
 
@@ -93,3 +98,7 @@ This allows **_pyadoc_** to be used as a system command after installation with 
 ## Author
 
 CFabien00 - https://github.com/CFabien00
+
+## Licence
+
+This project is licensed under the MIT. Check [LICENSE](https://github.com/CFabien00/PyAdoc/blob/main/LICENSE) for more information.
